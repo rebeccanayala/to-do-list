@@ -17,8 +17,8 @@ function removeTask(index) {
     updateTaskList(taskList);
 }
 
-function toggleList() {
-    tasks[index] = tasks[index].starsWith("[Concluída] ", "") ?
+function toggleTask(index) {
+    tasks[index] = tasks[index].startsWith("[Concluída] ", "") ?
         tasks[index].replace("Concluída ", "") :
         "[Concluída] " + tasks[index];
     const taskList = document.getElementById("taskList");
@@ -30,9 +30,9 @@ function updateTaskList(taskList) {
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
         li.innerHTML = `
-            <span class="${task.startsWith("[Concluída] ") ? "completed" : ""}">${task}</span>
-            <button onclick="toggleTask(${index})">Concluir</button>
-            <button onclick="removeTask(${index})">Remover</button>`;
+    <span class="${task.startsWith("[Concluída] ") ? "completed" : ""}">${task}</span>
+    ${!task.startsWith("[Concluída] ") ? `<button onclick="toggleTask(${index})">Concluir</button>` : ""}
+    <button onclick="removeTask(${index})">Remover</button>`;
         taskList.appendChild(li);
     });
 }
