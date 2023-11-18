@@ -8,6 +8,8 @@ function addTask() {
         tasks.push(taskInput.value);
         updateTaskList(taskList);
         taskInput.value = "";
+    } else {
+        alert("Digite uma tarefa.");
     }
 }
 
