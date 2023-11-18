@@ -69,3 +69,19 @@ li {
     font-weight: bold;
     text-decoration: line-through;
 }
+
+/* mobile devices */
+@media only screen and (max-width: 600px) {
+    #app {
+        padding: 10px;
+    }
+
+    input[type=text] {
+        width: 70%;
+        margin: 8px 0;
+    }
+
+    bottom {
+        width: 30%;
+    }
+}
